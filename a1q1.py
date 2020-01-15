@@ -44,6 +44,10 @@ def get_square():
     return square
 def main():
     '''
+    This function calls get_square and check_square functions to print YES or NO depending on the return of check_square
     '''
-    
-print(get_square())
+    magicSquare = get_square()
+    if(check_square(magicSquare)):
+        print("YES")
+    else:
+        print("NO")
