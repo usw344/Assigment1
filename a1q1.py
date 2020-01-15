@@ -27,8 +27,23 @@ def check_square(square):
     '''
 def get_square():
     '''
+    A function to get a list of 9 ints and turns them into a 3d list (3x3). This is done using a nested loop
     return: a 3x3 list of lists
     '''
+    rawInput = list( input("Enter 9 integers that are between") )
+    aListOfInts = [int(x) for x in rawInput]
+    square = []
+    for dimension in range(3):
+        subList = []
+        for element in range(3):
+            subList.append( aListOfInts[element] )
+        del aListOfInts[:3]
+        square.append(subList)
+    
+    
+    return square
 def main():
     '''
     '''
+    
+print(get_square())
