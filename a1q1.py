@@ -1,11 +1,11 @@
 from builtins import range
 
-
 def check_diagonals(square):
     '''
     param square: a 3d list containing 9 ints
     return: True if all the diagonals add up to 15. False otherwise
     '''
+    return True
 def check_columns(square):
     '''
     Checks the same index of each list in the list thus looking at the columns
@@ -92,6 +92,3 @@ def main():
         print("YES")
     else:
         print("NO")
-
-
-main()
