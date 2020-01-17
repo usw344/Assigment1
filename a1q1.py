@@ -1,10 +1,25 @@
-from builtins import range
-
+#mua942
+#11275853
+#Assigment 1 Question 1
 def check_diagonals(square):
     '''
     param square: a 3d list containing 9 ints
     return: True if all the diagonals add up to 15. False otherwise
     '''
+    aDiagonal = [0,1,2]
+    theSum = 0
+    for x in range(3):
+        theSum += square[x][x]
+    if(theSum != 15):
+        return False
+    else:
+        theSum = 0
+        theSum += square[2][0]
+        theSum += square[1][1]
+        theSum += square[0][2]
+        if theSum != 15:
+            return False
+
     return True
 def check_columns(square):
     '''
@@ -58,10 +73,16 @@ def check_square(square):
     param square: a 3d list containing 9 ints
     return:True if the square has all the properties of a magic square using other functions; False otherwise
     '''
-    if check_range(square) or check_rows(square) or check_columns(square):
-        return True
+    if not check_range(square):
+        return False
+    if not check_rows(square):
+        return False
+    if not check_columns(square):
+        return False
+    if not check_diagonals(square):
+        return False
 
-    return True ## later will return False when the other functions work
+    return True
 def get_square():
     '''
     A function to get a list of 9 ints and turns them into a 3d list (3x3). This is done using a nested loop
@@ -92,3 +113,5 @@ def main():
         print("YES")
     else:
         print("NO")
+
+

@@ -1,3 +1,6 @@
+# mua942
+# 11275853
+# Assigment 1 Question 1
 from a1q1 import *
 
 def tester(data_set,func):
@@ -33,6 +36,12 @@ test_diagonal = [
      "output": False,
      "reason": "Up-right diagonal does not sum to 15"
      }
+    ,
+
+    {"input": [[6, 8, 1], [7, 3, 5], [2, 4, 9]],
+     "output": False,
+     "reason": "Blah Range okay, row and column sums okay, diagonal sums not okay"
+     },
 
 ]
 test_columns = [
@@ -118,35 +127,35 @@ test_square = [
 
     {"input": [[8, 1, 6], [3, 5, 7], [4, 9, 2]],
      "output": True,
-     "reason": "All entries in range are present"
+     "reason": "Magic Square"
      },
-    {"input": [[8, 1, 6], [3, 5, 7], [4, 9, 4]],
+    {"input": [[1, 9, 6], [5, 3, 7], [4, 8, 2]],
      "output": False,
-     "reason": "Entries in correct range, one missing value last row"
+     "reason": "All values present, sums not okay"
      }
     ,
-    {"input": [[8, 1, 6], [1, 5, 7], [4, 9, 2]],
+    {"input": [[-8, 1, 6], [3, -5, 7], [4, 9, -2]],
      "output": False,
-     "reason": "Entries in correct range, one missing value middle row"
+     "reason": "Values out of range"
      }
     ,
-    {"input": [[4, 1, 6], [1, 5, 7], [4, 9, 2]],
+    {"input": [[5, 5, 5], [5, 5, 5], [5, 5, 5]],
      "output": False,
-     "reason": "Entries in correct range, one missing value first row"
+     "reason": "All row, column, diagonal sums okay, values missing"
      }
     ,
-    {"input": [[8, -1, 6], [1, 5, 7], [4, 9, 2]],
+    {"input": [[6, 8, 1], [7, 3, 5], [2, 4, 9]],
      "output": False,
-     "reason": "Entry out of range first row "
+     "reason": "Range okay, row and column sums okay, diagonal sums not okay"
      },
-    {"input": [[8, 1, 6], [1, 5, 0], [4, 9, 2]],
+    {"input": [[8, 1, 6], [7, 5, 3], [4, 9, 2]],
      "output": False,
-     "reason": "Entry out of range second row "
+     "reason": "Range okay, row and diagonal sums okay, column sums not okay"
      }
     ,
-    {"input": [[8, 1, 6], [1, 5, 7], [4, 9, -2]],
+    {"input": [[4, 1, 2], [3, 5, 7], [8, 9, 6]],
      "output": False,
-     "reason": "Entry out of range last row "
+     "reason": "Range okay, column and diagonal sums okay, row sums not okay"
      }
 ]
 
@@ -156,3 +165,4 @@ tester(test_diagonal,check_diagonals)
 tester(test_columns,check_columns)
 tester(test_rows,check_rows)
 tester(test_range,check_range)
+tester(test_square,check_square)
