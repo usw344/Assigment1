@@ -36,3 +36,9 @@ def getCommands(textfile):
 
 
 return a list of lists which contains command
+
+
+
+
+--------- x --------------------------------------------------
+make 4 functions =. Left, right, up, down
