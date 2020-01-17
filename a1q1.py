@@ -3,6 +3,7 @@
 #Assigment 1 Question 1
 def check_diagonals(square):
     '''
+    Checks the diagonals
     param square: a 3d list containing 9 ints
     return: True if all the diagonals add up to 15. False otherwise
     '''
@@ -70,6 +71,7 @@ def check_range(square):
 ### Use these 3 functions
 def check_square(square):
     '''
+    calls all the other check functions and returns true if and only if all other function return True. Thus being a Magic Square
     param square: a 3d list containing 9 ints
     return:True if the square has all the properties of a magic square using other functions; False otherwise
     '''
@@ -108,10 +110,10 @@ def main():
     This function calls get_square and check_square functions to print YES or NO depending on the return of check_square
     '''
     magicSquare = get_square()
-    print(magicSquare)
     if(check_square(magicSquare)):
         print("YES")
     else:
         print("NO")
 
 
+main()
