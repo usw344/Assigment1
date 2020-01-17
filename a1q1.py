@@ -7,9 +7,10 @@ def check_diagonals(square):
     param square: a 3d list containing 9 ints
     return: True if all the diagonals add up to 15. False otherwise
     '''
-    aDiagonal = [0,1,2]
+
     theSum = 0
     for x in range(3):
+        ##because for this down-right diagonal the index of list in the list are the same
         theSum += square[x][x]
     if(theSum != 15):
         return False
@@ -29,8 +30,11 @@ def check_columns(square):
     return: True if all the columns sum to 15. False otherwiseo
     '''
     for indice in range(3):
+        ##indice keeps track of which column we are on
         theSum = 0
         for list in square:
+            ##this takes the element of the row that is in the column
+            ##for example take the 1th element of each row and that is the fisrt colmun
             theSum += list[indice]
         if(theSum != 15):
             return False
@@ -42,6 +46,7 @@ def check_rows(square):
     return: True if all the rows sum to 15. False otherwise
     '''
     for list in square:
+        ##a row is a list in the square. sum() gives us the row sum
         if(sum(list) != 15):
             return False
 
@@ -54,10 +59,12 @@ def check_range(square):
     '''
     ## a list of 9 Falses
     seen = [False for x in range(9)]
+
     for dimension in square:
         for element in dimension:
             #Make sure the element is 1-9
             if(element >=1 and element <= 9):
+                ##element-1 means that 1-9 number will coorespond to the index of the bool list
                 seen[element - 1] = True
             else:
                 return False
