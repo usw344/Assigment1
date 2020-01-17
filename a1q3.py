@@ -45,7 +45,6 @@ def getCommands(textfile):
         commands.append(subList)
     return commands
 
-testFile = "torus_2_1.txt"
 
 def up(square, command):
     '''
@@ -68,14 +67,57 @@ def left(square, command):
     '''
         Shifts the row left by 1 index
         :param square: a 3x3 list of lists
-        :param command: a list containing a single vertical command for up
+        :param command: a index for the row
         :return:
     '''
+    row = square[command]
+    shiftedRow = []
+
+    for x in range(len(row)):
+        number = row[x]
+        ##the negative indice places the number right before the last element on the
+        shiftedRow.insert(-1, number)
+
+    ## replace the row
+    square[command] = shiftedRow
+
+    return square
 
 def right(square, command):
     '''
         Shifts the row right by 1 index
         :param square: a 3x3 list of lists
-        :param command: a list containing a single vertical command for up
+        :param command: a list containing a horizontal command "R" and an index
         :return:
     '''
+
+
+def makeChanges(square, commands):
+    '''
+
+    :param square: a 3x3  list of lists
+    :param commands: a list of lists
+    :return:
+    '''
+
+    for command in commands:
+        letter = command[0]
+        indice = command[1]
+
+        if letter == "L":
+            square = left(square,indice)
+        # elif letter == "D":
+        #     square = down(square,indice)
+        # elif letter == "U":
+        #     square = up(square,indice)
+        # elif letter == "R":
+        #     square = right(square,indice)
+    return square
+
+testFile = "torus_2_1.txt"
+test_Square = getSquare(testFile)
+test_commands = getCommands(testFile)
+result = makeChanges(test_Square,test_commands)
+
+
+print(result)
