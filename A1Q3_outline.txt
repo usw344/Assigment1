@@ -1,0 +1,38 @@
+## a skelaton outline
+
+def main():
+
+1. this function should call a getSquare(textfile)
+	This gives 3x3 list of lists
+2. this function should call getCommands(textfile)
+	this gives a list of lists where each list contains 2 elements. 
+3. this function should call makeChanges(square, commands)
+4.spit out final square
+
+
+---------- x ---------------------------------------------
+
+def getSquare(textfile):
+1. read the first 3 lines
+2. put each line as a list
+3. enter each list into a super-list
+
+return a 3x3 list of lists
+
+
+
+
+
+
+----------- x --------------------------------------------
+
+def getCommands(textfile):
+1. discard the first 4 lines of readlines()
+2. take lines 5.....n
+3. line[0] should be a string and a seperate element
+4. line[1] should be a int and a seperate element
+5. put 3,4 into a list
+6. add 5, into a super_list
+
+
+return a list of lists which contains command
