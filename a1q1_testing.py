@@ -1,5 +1,6 @@
 # mua942
 # 11275853
+#CMPT145 LO2
 # Assigment 1 Question 1
 from a1q1 import *
 

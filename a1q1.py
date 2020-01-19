@@ -1,6 +1,7 @@
 #mua942
 #11275853
 #Assigment 1 Question 1
+#CMPT145 LO2
 def check_diagonals(square):
     '''
     Checks the diagonals
